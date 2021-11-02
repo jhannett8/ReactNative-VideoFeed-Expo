@@ -2,7 +2,7 @@ import React, { useRef, useCallback } from "react";
 import { StyleSheet, Dimensions, View, FlatList } from "react-native";
 //import { useFocusEffect } from "@react-navigation/native";
 
-import FeedVideoItem from "./FeedVideoItem";
+import Item from "./Item";
 
 const { height } = Dimensions.get("window");
 
@@ -43,14 +43,14 @@ function FeedVideoArray({ listArray, index, isFocused }) {
 
   const _ItemLayout = (list, index) => ({
     length: height,
-    offset: (height) * index,
+    offset: height * index,
     index,
   });
 
   const _keyExtractor = useCallback((item) => item.postId.toString(), []);
 
   const _renderItem = useCallback(({ item }) => (
-    <FeedVideoItem
+    <Item
       ref={(ref) => {
         cellRefs.current[item.postId] = ref;
       }}

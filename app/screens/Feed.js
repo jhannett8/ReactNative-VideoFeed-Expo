@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import FeedVideoArray from "../components/FeedVideoArray";
 import LoopFeedData from "../assets/FeedObjects/LoopFeedData";
+import Array from "../components/Array";
 
 function Feed() {
-
   const [list, setList] = useState([]);
 
   const _getData = () => {
@@ -16,9 +15,7 @@ function Feed() {
     _getData();
   });
 
-  return (
-    <FeedVideoArray listArray={LoopFeedData} />
-  );
+  return <Array listArray={LoopFeedData} />;
 }
 
 export default Feed;
